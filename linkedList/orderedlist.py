@@ -14,7 +14,7 @@ class Node:
 	
 	def setNext(self,newNext):
 		self.next = newNext
-		
+
 class OrderedList:
 
 	def __init__(self):
@@ -41,5 +41,36 @@ class OrderedList:
 	def printq(self):
 		current = self.head
 		while current!=None:
-			print current.getData()
+			print current.getData(),
 			current = current.getNext()
+		print 
+
+	def search(self,item):
+		current = self.head
+		flag = False
+		while current!=None and not flag:
+			if current.getData()==item:
+				flag = True
+			elif current.getData()>item:
+				flag=True
+			else:
+				current=current.getNext()
+		return flag
+
+	def deleteByItem(self,item):
+		current = self.head
+		previous =None
+		found = False
+		while current!=None and not found:
+			if current.getData()==item:
+				found = True
+				print 'Item %d Found\n' %(item)
+
+			else:
+				previous = current
+				current = current.getNext()
+
+		if previous == None:
+			self.head = current.getNext()
+		else:
+			previous.setNext(current.getNext())
