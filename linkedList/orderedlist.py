@@ -20,7 +20,7 @@ class OrderedList:
 	def __init__(self):
 		self.head = None
 
-	def add1(self,item):
+	def add(self,item):
 		current = self.head
 		stop = False
 		previous = None
@@ -38,7 +38,7 @@ class OrderedList:
 			temp.setNext(previous.getNext())
 			previous.setNext(temp)
 
-	def printq1(self):
+	def printq(self):
 		current = self.head
 		while current!=None:
 			print current.getData()
