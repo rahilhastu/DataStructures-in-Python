@@ -19,6 +19,18 @@ class OrderedList:
 
 	def __init__(self):
 		self.head = None
+		
+	def isEmpty(self):
+		return self.head == None
+
+	def size(self):
+		current = self.head
+		size = 0
+		while current!=None:
+			count+=1
+			current = current.getNext()
+		return count
+
 
 	def add(self,item):
 		current = self.head
