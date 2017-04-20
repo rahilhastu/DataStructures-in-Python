@@ -74,3 +74,11 @@ class OrderedList:
 			self.head = current.getNext()
 		else:
 			previous.setNext(current.getNext())
+	
+	def deleteByPosition(self,pos):
+		current = self.head
+		for i in range(pos-2):
+			current = current.getNext()
+
+		current.setNext(current.getNext().getNext())
+
